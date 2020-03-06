@@ -2,7 +2,7 @@
 laravel電商 side project
 
 
-#準備讓網站動起來
+# 準備讓網站動起來
 
 1.先把它 git clone 下來一份，然後照着指令一步一步往下做
 ```php
