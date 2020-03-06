@@ -19,6 +19,15 @@ composer install
 
 ```php
 
+#我這裡是用mysql DB連線
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=
+DB_USERNAME=
+DB_PASSWORD=
+
+#我這裡是用mailtrap的參數設定
 MAIL_DRIVER=smtp
 MAIL_HOST=smtp.mailtrap.io
 MAIL_PORT=2525
@@ -26,7 +35,7 @@ MAIL_USERNAME=null
 MAIL_PASSWORD=null
 MAIL_ENCRYPTION=null
 
-#sendgrid
+#這裡有補上sendgrid的參數設定，有使用sendgrid的可以直接使用
 #MAIL_DRIVER=smtp
 #MAIL_HOST=smtp.sendgrid.net
 #MAIL_PORT=587
@@ -36,15 +45,17 @@ MAIL_ENCRYPTION=null
 #MAIL_FROM_NAME="Eric Chang"
 #MAIL_FROM_ADDRESS=eric@eric.eric
 
-
+#這裡是FB社群登入用的參數
 FACEBOOK_ID=
 FACEBOOK_SECRET=
 FACEBOOK_URL=
 
+#這裡是Google社群登入用的參數
 GOOGLE_ID=
 GOOGLE_SECRET=
 GOOGLE_URL=
 
+#這裡預設是用綠界的測試帳號，要換成正式帳號，可以在這裡設定
 #ECPAY_HASHKEY=
 #ECPAY_HASHIV=
 ECPAY_RETURN_URL=
@@ -54,3 +65,11 @@ ECPAY_RETURN_URL=
 ```php
 php artisan key:generate
 ```
+
+5.產生DB資料表跟產生資料
+```php
+php artisan migrate
+
+php artisan db:seed
+```
+
