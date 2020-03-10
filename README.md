@@ -73,3 +73,28 @@ php artisan migrate
 php artisan db:seed
 ```
 
+6.產生上傳圖片儲存的資料夾
+```php
+php artisan storage:link
+```
+會在public資料夾內建立storage資料夾，接著在storage資料夾內手動建立upload_img資料夾
+接著將resources\views\ec_tmp\img\shop內的圖片都複製到upload_img資料夾(假資料的圖片顯示)
+
+7.如FB、GOOGLE登入，出現SSL錯誤
+請設置php.ini檔內的curl.cainfo ="D:\pem\cacert.pem(絕對路徑)"，可以到https://curl.haxx.se/docs/caextract.html下載cacert.pem檔
+
+如果還是會出現一樣的錯誤，到vendor\guzzlehttp\guzzle\src\Handler\CurlFactory.php，做下面的修改(在本機才這樣做)
+
+```php
+
+//$conf[CURLOPT_SSL_VERIFYHOST] = 2; //SSL會報錯，因此修改
+//$conf[CURLOPT_SSL_VERIFYPEER] = true; //SSL會報錯，因此修改
+$conf[CURLOPT_SSL_VERIFYHOST] = 0;
+$conf[CURLOPT_SSL_VERIFYPEER] = false;
+
+```
+
+8.啟動laravel
+```php
+php artisan serve
+```
