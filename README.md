@@ -81,7 +81,7 @@ php artisan storage:link
 接著將resources\views\ec_tmp\img\shop內的圖片都複製到upload_img資料夾(假資料的圖片顯示)
 
 7.如FB、GOOGLE登入，出現SSL錯誤
-請設置php.ini檔內的curl.cainfo ="D:\pem\cacert.pem(絕對路徑)"，可以到https://curl.haxx.se/docs/caextract.html下載cacert.pem檔
+請設置php.ini檔內的curl.cainfo ="D:\pem\cacert.pem(絕對路徑)"，可以到https://curl.haxx.se/docs/caextract.html 下載cacert.pem檔
 
 如果還是會出現一樣的錯誤，到vendor\guzzlehttp\guzzle\src\Handler\CurlFactory.php，做下面的修改(在本機才這樣做)
 
