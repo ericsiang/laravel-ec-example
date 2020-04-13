@@ -1,6 +1,10 @@
 # laravel-ec-example
 laravel電商 side project
 
+>實做說明
+1.laravel socialite第三方登入(使用FB、GOOGLE)及一般註冊登入
+2.基本電商功能=>新增商品、加入購物車、串接綠界API付費、成立訂單
+3.contact us寄信功能(提供兩種不同寄信方式 mailtrap、sendgrid)
 
 # 準備讓網站動起來
 
