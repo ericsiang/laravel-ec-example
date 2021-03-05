@@ -128,7 +128,7 @@ class OrderCartController extends Controller
                         //基本參數(請依系統規劃自行調整)
                         $MerchantTradeNo = $order->order_no; //特店交易編號 我們這的訂單號碼
                         $obj->Send['ReturnURL']         =  env('ECPAY_RETURN_URL');    //付款完成通知回傳的網址
-                        $obj->Send['OrderResultURL']    = 'http://7a4016aa.ngrok.io/checkout_status';
+                        $obj->Send['OrderResultURL']    = env('ECPAY_RETURN_URL');
                         $obj->Send['MerchantTradeNo']   = $MerchantTradeNo;                          //訂單編號
                         $obj->Send['MerchantTradeDate'] = date('Y/m/d H:i:s');                       //交易時間
                         $obj->Send['TotalAmount']       = $order->order_total;                       //交易金額
