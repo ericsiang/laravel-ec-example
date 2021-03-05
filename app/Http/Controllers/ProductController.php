@@ -244,9 +244,9 @@ class ProductController extends Controller
        
         switch($upload_type){
             case 'single':
-                
+                dd($product->img);
                 //圖片儲存路徑
-                $real_public_path=public_path('storage/'.$product->img);    
+                $real_public_path=storage_path('app/public/'.$product->img);    
 
 
                 //判斷單圖是否存在，是則刪除圖片，下面重新上傳新的圖片
@@ -264,7 +264,7 @@ class ProductController extends Controller
                 
                 
                 //重新上傳新的圖片   
-                $img=Image::make(public_path('storage/'.$product->img))->resize(236,325);
+                $img=Image::make(storage_path('app/public/'.$product->img))->resize(236,325);
                 $img->save();       
             break;    
 
