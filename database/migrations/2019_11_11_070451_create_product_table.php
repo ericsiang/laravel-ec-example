@@ -23,7 +23,8 @@ class CreateProductTable extends Migration
             $table->bigInteger('stock')->default(0)->comment('庫存');
             $table->mediumText('desc')->nullable()->comment('產品描述');
             $table->mediumText('content')->nullable()->comment('產品內容');
-            $table->string('img')->defalut(NULL);
+            $table->string('img')->nullable()->defalut(NULL);
+            $table->string('upload_img')->nullable()->defalut(NULL);
             $table->Integer('status')->default(1)->comment('1=前台顯示,2=刪除,3=前台隱藏');
             $table->softDeletes()->comment('軟刪除');
             $table->timestamps();
